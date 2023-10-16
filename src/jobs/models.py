@@ -20,7 +20,7 @@ class Job(models.Model):
         return self.title
 
 
-class JobDetail(models.Model):
+class Application(models.Model):
     pass
 
 
