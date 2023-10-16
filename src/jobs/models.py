@@ -8,19 +8,15 @@ class Job(models.Model):
     salary = models.IntegerField(default=0, blank=True)
     job_nature = models.CharField(max_length=500)
     posted_date = models.DateTimeField(default=timezone.now())
-    last_date = models.DateTimeField()
+    last_date = models.DateTimeField(null=True , blank=True)
     description = models.TextField()
     user = models.ForeignKey(User, related_name="user_jobs", on_delete=models.CASCADE)
-    company_name = models.CharField(max_length=100)
-    company_description = models.CharField(max_length=500)
+    company_name = models.CharField(max_length=100,default="")
+    company_description = models.CharField(max_length=500 , default="")
     company_website = models.CharField(max_length=200, default="")
 
 
     def __str__(self):
         return self.title
-
-
-class Application(models.Model):
-    pass
 
 
